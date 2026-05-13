@@ -41,26 +41,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ---- Contact form submit ----
+  // ---- Contact form submit → sends details via WhatsApp ----
   const form = document.getElementById('quoteForm');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      const fields = form.querySelectorAll('input, select, textarea');
+      const name     = fields[0].value.trim() || '—';
+      const phone    = fields[1].value.trim() || '—';
+      const city     = fields[2].value.trim() || '—';
+      const property = fields[3].value || '—';
+
+      const services = [];
+      if (form.querySelector('#chkCamera').checked)  services.push('Security Cameras');
+      if (form.querySelector('#chkFence').checked)   services.push('Electric Fence');
+      if (form.querySelector('#chkTracker').checked) services.push('Car Tracker');
+      const serviceText = services.length ? services.join(', ') : '—';
+
+      const message = form.querySelector('textarea').value.trim() || '—';
+
+      const text =
+        `*New Quote Request — SecureGuard Pro*\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `📞 *Phone:* ${phone}\n` +
+        `📍 *City:* ${city}\n` +
+        `🏠 *Property Type:* ${property}\n` +
+        `🔧 *Services:* ${serviceText}\n` +
+        `💬 *Details:* ${message}`;
+
+      const waURL = `https://wa.me/923150030730?text=${encodeURIComponent(text)}`;
+
       const btn = form.querySelector('button[type="submit"]');
-      const original = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Opening WhatsApp...';
       btn.disabled = true;
 
       setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Quote Request Sent!';
+        window.open(waURL, '_blank');
+        btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Sent via WhatsApp!';
         btn.style.background = '#059669';
         setTimeout(() => {
-          btn.innerHTML = original;
+          btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Quote Request';
           btn.style.background = '';
           btn.disabled = false;
           form.reset();
         }, 3000);
-      }, 1800);
+      }, 600);
     });
   }
 

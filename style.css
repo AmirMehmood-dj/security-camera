@@ -778,6 +778,41 @@ a.ci-value:hover { color: var(--accent); }
 .site-footer .brand-text .accent { color: #60a5fa; }
 
 /* ============================================
+   FAQ
+   ============================================ */
+.faq-item {
+  border: 1px solid var(--card-border) !important;
+  border-radius: 12px !important;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-btn {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main) !important;
+  background: #fff !important;
+  padding: 18px 20px;
+  box-shadow: none !important;
+}
+.faq-btn:not(.collapsed) {
+  color: var(--accent) !important;
+  background: var(--accent-light) !important;
+}
+.faq-btn::after {
+  filter: none;
+}
+.faq-btn:not(.collapsed)::after {
+  filter: invert(30%) sepia(90%) saturate(600%) hue-rotate(200deg);
+}
+.faq-body {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  padding: 4px 20px 18px;
+  background: #fff;
+}
+
+/* ============================================
    INSTALLATION CALLOUT
    ============================================ */
 .install-callout-inner {
