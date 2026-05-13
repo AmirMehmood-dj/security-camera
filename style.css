@@ -135,7 +135,8 @@ body {
 }
 .brand-text .accent { color: var(--accent); }
 
-.btn-cta {
+.btn-cta,
+.navbar-nav .btn-cta {
   background: var(--orange) !important;
   color: #fff !important;
   border-radius: 8px !important;
