@@ -415,6 +415,24 @@ body {
 .service-link:hover { gap: 10px; }
 .featured-card .service-link { color: var(--orange); }
 
+.btn-service-wa {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  background: #25d366;
+  color: #fff !important;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px; font-weight: 600;
+  padding: 11px 16px;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+.btn-service-wa:hover {
+  background: #1ebe5b;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
 /* ============================================
    PRODUCTS
    ============================================ */
