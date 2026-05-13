@@ -760,6 +760,55 @@ a.ci-value:hover { color: var(--accent); }
 .site-footer .brand-text .accent { color: #60a5fa; }
 
 /* ============================================
+   INSTALLATION CALLOUT
+   ============================================ */
+.install-callout-inner {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 16px 28px;
+  font-size: 15px;
+  color: #14532d;
+}
+.install-callout-inner i { color: #16a34a; font-size: 18px; }
+
+/* ============================================
+   CITIES SECTION
+   ============================================ */
+.city-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: default;
+}
+.city-card i { color: var(--accent); font-size: 16px; }
+.city-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: #bfdbfe;
+}
+.city-card-more {
+  background: var(--accent-light);
+  border-color: #bfdbfe;
+  color: var(--accent);
+}
+.city-card-more i { color: var(--accent); }
+
+/* ============================================
    WHATSAPP FLOATING BUTTON
    ============================================ */
 .whatsapp-float {
