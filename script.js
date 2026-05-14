@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `🔧 *Services:* ${serviceText}\n` +
         `💬 *Details:* ${message}`;
 
-      const waURL = `https://wa.me/923150030730?text=${encodeURIComponent(text)}`;
+      const waURL = `https://wa.me/923224143977?text=${encodeURIComponent(text)}`;
 
       const btn = form.querySelector('button[type="submit"]');
       btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Opening WhatsApp...';
